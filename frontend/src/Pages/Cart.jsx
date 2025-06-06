@@ -24,7 +24,9 @@ useEffect(() => {
         }
       }
       setCartData(tempData)
+      console.log("This is cartItem: ", cartData);
 },[cartItems]);
+
 
   return (
     <div className='border-t pt-14'>

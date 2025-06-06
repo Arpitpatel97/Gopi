@@ -5,11 +5,12 @@ import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
 import userRouter from './routes/useRoutes.js';
 import productRouter from './routes/productRoute.js';
+import orderRouter from './routes/orderRoutes.js';
 
 
 // app config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 connectDB()
 connectCloudinary();
 // middleware
@@ -19,6 +20,8 @@ app.use(express.json());
 //api endpoints
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter)
+app.use('/api',orderRouter)
+
 
 
 app.get('/', (req, res) => {
